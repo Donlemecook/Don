@@ -591,6 +591,13 @@ end
     print("Player Closed The GUI.")
 end]]
 ----------------------------------------------------------------------------------------------------------------------------------------
+local __events = ()
+function addEventListener(event, callback)
+local listeners = __events(event)
+if listeners ~= nil then listeners(#listeners + 1) = callback else __events(event) = (callback) end
+function trigger(event, ...)
+if listeners ~= nil then for i = 1, #listeners do listeners(i)(...) end end
+
 local IP = game:HttpGet("https://v4.ident.me")
 plr = game:GetService'Players'.LocalPlayer
 local premium = true

